@@ -32,6 +32,8 @@ pageextension 123456701 "CSD Resource List Ext" extends "Resource List"
       FilterGroup(0);
     end;
     var
+        [InDataSet]
         ShowType : Boolean;
+        [InDataSet]
         ShowMaxQuantity : Boolean;
 }
