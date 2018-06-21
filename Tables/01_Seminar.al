@@ -131,7 +131,7 @@ table 123456701 "Seminar"
         "Last Date Modified" := Today;
     end;
 
-    local procedure AssistEdit() : Boolean;
+    procedure AssistEdit() : Boolean;
     begin
         with Seminar do begin
             Seminar := Rec;

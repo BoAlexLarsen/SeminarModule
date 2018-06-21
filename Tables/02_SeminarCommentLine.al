@@ -1,6 +1,8 @@
 table 123456702 "Seminar Comment Line"
 {
-   
+    LookupPageId = "Seminar Comment List";
+    DrillDownPageId = "Seminar Comment List";
+
     fields
     {
         field(10;"Table Name";Option)
@@ -8,10 +10,12 @@ table 123456702 "Seminar Comment Line"
             Caption = 'Table Name';
             OptionMembers = "Seminar","Seminar Registration","Posted Seminar Registration";
             OptionCaption = 'Seminar,Seminar Registration,Posted Seminar Registration';
+        
         }
         field(20;"No.";Code[20])
         {
             Caption = 'No.';
+            TableRelation = if ("Table Name" = const(Seminar)) Seminar;
         }
         field(30;"Document Line No.";Integer)
         {
