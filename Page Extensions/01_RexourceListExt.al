@@ -2,7 +2,7 @@ pageextension 123456701 "CSD Resource List Ext" extends "Resource List"
 {
     layout
     {
-        addlast(Content)
+        addafter(Type)
         {
             field("CSD Resource Type";"CSD Resource Type")
             {
