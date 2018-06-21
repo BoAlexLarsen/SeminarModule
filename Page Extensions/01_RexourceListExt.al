@@ -2,11 +2,15 @@ pageextension 123456701 "CSD Resource List Ext" extends "Resource List"
 {
     layout
     {
+        modify(Type)
+        {
+            Visible = ShowType;
+        }
         addafter(Type)
         {
             field("CSD Resource Type";"CSD Resource Type")
             {
-                Visible = showtype;
+                
             }
             field("CSD Quantity per Day";"CSD Quantity per Day")
             {
