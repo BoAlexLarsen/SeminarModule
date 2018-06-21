@@ -1,5 +1,7 @@
 table 123456701 "Seminar"
 {
+    LookupPageId = "Seminar List";
+    Caption = 'Seminar';
     
     fields
     {
