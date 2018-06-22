@@ -3,11 +3,12 @@ page 123456710 "Seminar Registration"
     // CSD1.00 - 2018-01-01 - D. E. Veloper
     //   Chapter 6 - Lab 3-1
     //     - Created new page
+    //   Chapter 7 - Lab 5-8
+    //     - Added Post Action  
 
     Caption = 'Seminar Registration';
     PageType = Document;
     SourceTable = "Seminar Registration Header";
-    UsageCategory = tasks;
 
     layout
     {
@@ -109,11 +110,12 @@ page 123456710 "Seminar Registration"
             {
                 SubPageLink = "No." = field ("Seminar No.");
             }
-            part("Customer Details Factbos"; "Customer Details FactBox")
+            part("Customer Details FactBox"; "Customer Details FactBox")
             {
                 Provider = SeminarRegistrationLines;
                 SubPageLink = "No." = field ("Bill-to Customer No.");
             }
+
             systempart("Links"; Links)
             {
             }
@@ -145,6 +147,19 @@ page 123456710 "Seminar Registration"
                     RunObject = Page 123456724;
                     RunPageLink = "Document No." = Field ("No.");
                 }
+            }
+        }
+        area(Processing)
+        {
+            action("&Post")
+            {
+                Caption = '&Post';
+                Image = PostDocument;
+                Promoted = true;
+                PromotedIsBig = true;
+                PromotedCategory = Process;
+                ShortcutKey = F9;
+                RunObject = codeunit "Seminar-Post (Yes/No)";
             }
         }
     }
