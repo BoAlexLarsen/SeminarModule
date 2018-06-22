@@ -5,7 +5,7 @@ page 123456710 "Seminar Registration"
     //     - Created new page
 
     Caption = 'Seminar Registration';
-    PageType = Card;
+    PageType = Document;
     SourceTable = "Seminar Registration Header";
     UsageCategory = tasks;
 
@@ -58,6 +58,11 @@ page 123456710 "Seminar Registration"
                 {
                 }
             }
+            part(SeminarRegistrationLines;"Seminar Registration Subpage")
+            {
+                Caption = 'Lines';
+                SubPageLink="Document No." = field("No.");
+            }
             group("Seminar Room")
             {
                 field("Room Resource Code";"Room Resource No.")
@@ -103,6 +108,11 @@ page 123456710 "Seminar Registration"
             part("Seminar Details FactBox";"Seminar Details FactBox")
             {
                 SubPageLink="No."=field("Seminar No."); 
+            }
+            part("Customer Details Factbos";"Customer Details FactBox")
+            {
+                Provider=SeminarRegistrationLines;
+                SubPageLink="No." = field("Bill-to Customer No.");
             }
             systempart("Links";Links)
             {
