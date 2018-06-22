@@ -38,7 +38,7 @@ page 123456713 "Seminar Registration List"
                 field("Maximum Participants";"Maximum Participants")
                 {
                 }
-                field("Room Resource Code";"Room Code")
+                field("Room Resource No.";"Room Resource No.")
                 {
                 }
             }

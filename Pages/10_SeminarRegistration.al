@@ -33,7 +33,7 @@ page 123456710 "Seminar Registration"
                 field("Seminar Name";"Seminar Name")
                 {
                 }
-                field("Instructor Resource No.";"Instructor Code")
+                field("Instructor Resource No.";"Instructor Resource No.")
                 {
                 }
                 field("Instructor Name";"Instructor Name")
@@ -60,7 +60,7 @@ page 123456710 "Seminar Registration"
             }
             group("Seminar Room")
             {
-                field("Room Resource Code";"Room Code")
+                field("Room Resource Code";"Room Resource No.")
                 {
                 }
                 field("Room Name";"Room Name")
