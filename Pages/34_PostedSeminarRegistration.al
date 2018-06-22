@@ -140,6 +140,23 @@ page 123456734 "Posted Seminar Registration"
                 }
             }
         }
+        area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
+                    Navigate : Page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date","No.");
+                    Navigate.Run;
+                end;
+            }
+        }
     }
 }
 

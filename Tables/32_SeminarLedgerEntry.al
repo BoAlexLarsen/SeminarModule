@@ -5,6 +5,8 @@ table 123456732 "Seminar Ledger Entry"
     //     - Created new table
 
     Caption = 'Seminar Ledger Entry';
+    LookupPageId = "Seminar Ledger Entries";
+    DrillDownPageId = "Seminar Ledger Entries";
 
     fields
     {
@@ -156,6 +158,11 @@ table 123456732 "Seminar Ledger Entry"
     {
         key(Key1;"Entry No.")
         {
+            
+        }
+        Key(Key2;"Document No.","Posting Date")
+        {
+
         }
     }
 

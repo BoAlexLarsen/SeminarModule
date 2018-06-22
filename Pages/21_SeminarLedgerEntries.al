@@ -85,6 +85,27 @@ page 123456721 "Seminar Ledger Entries"
             systempart("links";Links)
             {
             }
+        }      
+    }   
+    actions
+    {
+                area(Processing)
+        {
+            action("&Navigate")
+            {
+                Caption = '&Navigate';
+                Image = Navigate;
+                Promoted = true;
+                PromotedCategory = Process;
+                trigger OnAction()
+                var
+                    Navigate : Page Navigate;
+                begin
+                    Navigate.SetDoc("Posting Date","Document No.");
+                    Navigate.Run;
+                end;
+            }
         }
+
     }
 }

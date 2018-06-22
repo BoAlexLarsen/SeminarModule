@@ -351,6 +351,10 @@ table 123456710 "Seminar Registration Header"
           NoSeriesMgt.InitSeries(SeminarSetup."Seminar Registration Nos.",xRec."No. Series",0D,"No.","No. Series");
         end;
         InitRecord;
+        if GetFilter("seminar No.") <> '' then
+          if GetRangeMin("Seminar No.") = GetRangeMax("Seminar No.") then
+            Validate("Seminar No.",GetRangeMin("Seminar No."));
+
     end;
 
     procedure AssistEdit(OldSeminarRegHeader : Record "Seminar Registration Header") : Boolean;
