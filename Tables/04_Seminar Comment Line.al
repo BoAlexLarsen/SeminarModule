@@ -48,4 +48,15 @@ table 123456704 "Seminar Comment Line"
             Clustered = true;
         }
     }
+    procedure SetupNewLine();
+    var
+        SeminarCommentLine : Record "Seminar Comment Line";
+    begin
+        SeminarCommentLine.SetRange("Table Name","Table Name");
+        SeminarCommentLine.SetRange("No.","No.");
+        SeminarCommentLine.SetRange("Document Line No.","Document Line No.");
+        SeminarCommentLine.SetRange(Date,WorkDate);
+        if SeminarCommentLine.IsEmpty then
+          Date := WorkDate;
+    end;
 }

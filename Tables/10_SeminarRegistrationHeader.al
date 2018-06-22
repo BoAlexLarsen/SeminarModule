@@ -10,7 +10,7 @@ table 123456710 "Seminar Registration Header"
         field(1;"No.";Code[20])
         {
             Caption = 'No';
-
+            
             trigger OnValidate();
             begin
                 if "No." <> xRec."No." then begin
@@ -298,7 +298,7 @@ table 123456710 "Seminar Registration Header"
             SumIndexFields = Duration;
         }
     }
-
+    
     var
         PostCode : Record "Post Code";
         Seminar : Record Seminar;
@@ -317,6 +317,9 @@ table 123456710 "Seminar Registration Header"
 
     trigger OnDelete();
     begin
+        if (CurrFieldNo <> 0) then
+          TestField(Status,Status::Canceled);
+
         SeminarRegLine.RESET;
         SeminarRegLine.SETRANGE("Document No.","No.");
         SeminarRegLine.SETRANGE(Registered,true);
@@ -347,12 +350,7 @@ table 123456710 "Seminar Registration Header"
           SeminarSetup.TestField("Seminar Registration Nos.");
           NoSeriesMgt.InitSeries(SeminarSetup."Seminar Registration Nos.",xRec."No. Series",0D,"No.","No. Series");
         end;
-
-        if "Posting Date" = 0D then
-          "Posting Date" := WORKDATE;
-        "Document Date" := WORKDATE;
-        SeminarSetup.GET;
-        NoSeriesMgt.SetDefaultSeries("Posting No. Series",SeminarSetup."Posted Seminar Reg. Nos.");
+        InitRecord;
     end;
 
     procedure AssistEdit(OldSeminarRegHeader : Record "Seminar Registration Header") : Boolean;
@@ -370,5 +368,15 @@ table 123456710 "Seminar Registration Header"
           end;
         end;
     end;
+
+    procedure InitRecord();
+    begin
+        if "Posting Date" = 0D then
+          "Posting Date" := WORKDATE;
+        "Document Date" := WORKDATE;
+        SeminarSetup.GET;
+        NoSeriesMgt.SetDefaultSeries("Posting No. Series",SeminarSetup."Posted Seminar Reg. Nos.");        
+    end;
+
 }
 
