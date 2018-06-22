@@ -3,7 +3,7 @@ codeunit 123456732 "Seminar Jnl.-Post Line"
 // Chapter 7 - Lab 2-2
 {
     TableNo = "Seminar Journal Line";
-         
+
     trigger OnRun();
     begin
         RunWithCheck(Rec);

@@ -86,18 +86,19 @@ page 123456736 "Posted Seminar Reg. List"
         {
             action("&Navigate")
             {
-                Caption = '&Navigate';
-                Image = Navigate;
-                Promoted = true;
-                PromotedCategory = Process;
-                trigger OnAction()
+                Caption='&Navigate';
+                Image=Navigate;
+                Promoted=true;
+                PromotedCategory=Process;
+
+                trigger OnAction();
                 var
-                    Navigate : Page Navigate;
+                    Navigate : page Navigate;
                 begin
                     Navigate.SetDoc("Posting Date","No.");
-                    Navigate.Run;
+                    Navigate.RUN;
                 end;
-            }
+            }        
         }
     }
 }
